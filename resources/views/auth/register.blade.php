@@ -29,6 +29,7 @@
                         <div class="form-group">
                             <label>Username</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            {{-- <input id="toko_id" type="text" class="form-control @error('toko_id') is-invalid @enderror" name="toko_id" value="{{ old('toko_id') }}" hidden autocomplete="toko_id" value="1"> --}}
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>

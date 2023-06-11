@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        // 'toko_id',
     ];
 
     /**
@@ -42,7 +43,7 @@ class User extends Authenticatable
     protected $table = "users";
     protected  $primaryKey = "idm";
     public $incrementing = true;
-    protected $fillable = ['toko_id','idm','name','email','telepon','alamat','poto','hak','password'];
+    protected $fillable = ['idm','name','email','telepon','alamat','poto','hak','password'];
     public $timestamps = true;
 
     public function toko()

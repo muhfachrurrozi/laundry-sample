@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Toko;
 use App\Models\User;
@@ -85,9 +86,11 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $users = User::findOrfail($id);
+
+        return view('admin\users\edit', compact('users'));
     }
 
     /**
@@ -105,7 +108,7 @@ class UserController extends Controller
     {
         $duser = User::findOrfail($id);
 
-        $duser->deleteImage('user-img/'.$duser->poto);
+        Storage::delete($duser->poto);
 
         $duser->delete();
 

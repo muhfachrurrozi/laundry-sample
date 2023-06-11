@@ -9,7 +9,9 @@ use App\Http\Controllers\JasaController;
 use App\Http\Controllers\ProsesController;
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\NamaController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\PesanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,8 @@ Auth::routes();
 Route::middleware(['auth', 'user-access:member'])->group(function () {
 
     Route::get('/member/index', [HomeController::class, 'memberHome'])->name('member.index');
+    Route::resource('pesans', PesanController::class);
+    Route::resource('namas', NamaController::class);
 });
 
 // Route kasir sebagai user

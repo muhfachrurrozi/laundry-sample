@@ -108,7 +108,7 @@ class TokoController extends Controller
     {
         $dtoko = Toko::findOrfail($id);
 
-        $dtoko->delete('logo-toko/'.$dtoko->logo_toko);
+        Storage::delete($dtoko->logo_toko);
 
         $dtoko->delete();
 

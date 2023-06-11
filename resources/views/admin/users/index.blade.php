@@ -17,7 +17,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-sm-4 col-3">
-                    <h4 class="page-title"><i class="fa fa-vcard-o" aria-hidden="true"></i> User</h4>
+                    <h4 class="page-title"><i class="fa fa-university" aria-hidden="true"></i> Toko</h4>
                 </div>
                 <!--Add patients-->
                 <div class="col-sm-8 col-9 text-right m-b-20">
@@ -34,9 +34,9 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Poto</th>
-                                    <th>Toko Center</th>
-                                    <th>ID Member</th>
+                                    <th>Foto</th>
+                                    <th>Toko Senter</th>
+                                    <th>IDM</th>
                                     <th>Name</th>
                                     <th>Telepon</th>
                                     <th>Alamat</th>
@@ -53,29 +53,28 @@
                                         <img src="user-img/{{ $user->poto }}" width="50">
                                         @else
                                         <img src="{{ asset('assets/img/user.jpg') }}" width="50">
-                                        @endif
-                                    </td>
-                                    <td>{{ $user->toko->name_toko }}</td>
-                                    <td>{{ $user->idm }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->telepon }}</td>
-                                    <td>{{ $user->alamat }}</td>
-                                    <td>{{ $user->hak }}</td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <form onsubmit="return confirm('Delete this user permanently?')" action="{{ route('users.destroy', $user->id) }}" method="post">
-                                                    <a class="dropdown-item" href="{{ route('users.edit', $user->id) }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i>Delete</button>
-                                                </form>
+                                        @endif</td>
+                                        <td>{{ $user->toko->name_toko }}</td>
+                                        <td>{{ $user->idm }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->telepon }}</td>
+                                        <td>{{ $user->alamat }}</td>
+                                        <td>{{ $user->hak }}</td>
+                                        <td class="text-right">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <form onsubmit="return confirm('Delete this user permanently?')" action="{{ route('users.destroy', $user->id) }}" method="post">
+                                                        <a class="dropdown-item" href="{{ route('users.edit', $user->id) }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="dropdown-item"><i class="fa fa-trash-o m-r-5"></i>Delete</button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
+                                        </td>
+                                    </tr>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>
